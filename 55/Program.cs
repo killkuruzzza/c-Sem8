@@ -8,7 +8,6 @@ Clear();
 
 Write("Введите количество строк массива: ");
 int rows = int.Parse(ReadLine());
-
 Write("Введите количество столбцов массива: ");
 int columns = int.Parse(ReadLine());
 
@@ -19,6 +18,10 @@ PrintArray(array);
 WriteLine();
 PrintArray(ChangeArray1(array));
 WriteLine();
+PrintArray(array);
+WriteLine();
+ChangeArray2(array);
+PrintArray(array);
 
 
 int[,] GetArray(int m, int n, int min, int max)
@@ -50,7 +53,7 @@ int[,] ChangeArray1(int[,] array)
 
 void ChangeArray2(int[,] array)
 {
-    if (rows != columns)
+    if (array.GetLength(0) != array.GetLength(1))
     {
         WriteLine("В данной матрице нельзя заменить элементы!");
         return;
@@ -97,7 +100,6 @@ void PrintArray(int[,] array)
 // 9 встречается 3 раза
 
 // 1, 2, 3,4, 6, 1, 2, 1, 6
-// 1,1,1,2,2,3,4,6,6
 
 // 1 встречается 3 раза
 

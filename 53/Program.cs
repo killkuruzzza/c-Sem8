@@ -4,20 +4,21 @@ using System;
 using static System.Console;
 
 Clear();
-
 Write("Введите количество строк массива: ");
 int rows = int.Parse(ReadLine());
 Write("Введите количество столбцов массива: ");
 int columns = int.Parse(ReadLine());
-Write("Введите строку 1: ");
-int a = int.Parse(ReadLine());
-Write("Введите строку 2: ");
-int b = int.Parse(ReadLine());
-int[,] array = GetArray(rows, columns, 0, 10);
+
+int[,] array = GetArray(rows, columns, 10, 100);
 PrintArray(array);
 WriteLine();
-ChangeRows(array, a, b);
+Write("Введите строку 1: ");
+int a1 = int.Parse(ReadLine());
+Write("Введите строку 2: ");
+int b1 = int.Parse(ReadLine());
+ChangeRows(array, a1, b1);
 PrintArray(array);
+
 
 int[,] GetArray(int m, int n, int min, int max)
 {
@@ -47,8 +48,6 @@ void PrintArray(int[,] inArray)
 
 void ChangeRows(int[,] inArray, int a, int b)
 {
-    
-    int rowCount = inArray.GetLength(0) - 1;
     for (int i = 0; i < inArray.GetLength(1); i++)
     {
         int k = inArray[a - 1, i];
